@@ -1,7 +1,7 @@
 <?php
 namespace active;
 
-class ActiveModel extends \SoftDelete{
+class ActiveModel {
 
     public function index(){
     	echo 1112222;
