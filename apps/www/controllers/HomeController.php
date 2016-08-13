@@ -1,5 +1,5 @@
 <?php
-use active\ActiveModel;
+use index\IndexService;
 
 class HomeController extends BaseController {
 
@@ -18,8 +18,8 @@ class HomeController extends BaseController {
 
 	public function showWelcome()
 	{
-		$m = new ActiveModel();
-		echo $m->index();
+		$indexService = new IndexService();
+		echo $indexService->index();
 		return View::make('hello');
 	}
 
