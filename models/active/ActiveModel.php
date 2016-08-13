@@ -1,11 +1,11 @@
 <?php
 namespace active;
 
-class ActiveModel {
+class ActiveModel extends \SoftDelete{
 
     public function index(){
-    	echo 1112222;
-    	die();
+    	return 'Hello Word';
+    	
     }
   
 }
