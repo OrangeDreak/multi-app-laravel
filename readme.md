@@ -14,7 +14,7 @@ git clone https://github.com/kyo4311/multi-app-laravel.git
 
 # 外部共用扩展
 
-- 每个站点目当都有\start\global.php，打开进行修改
+- 每个站点目录都有\start\global.php，打开进行修改
 ```php
 ClassLoader::addDirectories(array(
 
