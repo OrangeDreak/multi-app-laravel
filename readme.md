@@ -1,25 +1,29 @@
-## Laravel PHP Framework
+# laravel多站点配置脚手架。
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/downloads.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+# 特点
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, and caching.
+- 支持多站点。 新增点只要将将apps下面的www目录复制一份即可
 
-Laravel aims to make the development process a pleasing one for the developer without sacrificing application functionality. Happy developers make the best code. To this end, we've attempted to combine the very best of what we have seen in other web frameworks, including frameworks implemented in other languages, such as Ruby on Rails, ASP.NET MVC, and Sinatra.
+- 每个站点可以用共用外层models。
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
 
-## Official Documentation
+# 使用
+```
+git clone https://github.com/kyo4311/multi-app-laravel.git
+```
 
-Documentation for the entire framework can be found on the [Laravel website](http://laravel.com/docs).
+# 外部共用扩展
 
-### Contributing To Laravel
+- 每个站点目当都有\start\global.php，打开进行修改
+```php
+ClassLoader::addDirectories(array(
 
-**All issues and pull requests should be filed on the [laravel/framework](http://github.com/laravel/framework) repository.**
+    app_path().'/commands',
+    app_path().'/controllers',
+    app_path().'/database/seeds',
 
-### License
+    base_path().'/services',
+    base_path().'/models' //本例子已经扩展的
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+));
+```
